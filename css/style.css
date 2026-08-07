@@ -134,3 +134,26 @@ body.intensity-standard .scene-hero::after{animation:scenePulse 5.5s infinite}.i
 @media(max-width:760px){.answer-grid{grid-template-columns:1fr}.more-menu{right:8px;top:54px}}
 .cover-screen{background-image:url('../assets/hospital_night_exterior.webp')}
 @media(min-width:901px){.topbar{grid-template-columns:250px minmax(250px,1fr) minmax(315px,auto)}}
+
+/* v4.1：自由填写、图纸视觉吸附、结局档案与统一历史影像 */
+.article-thumb,.article-detail .article-image img{filter:saturate(.72) contrast(.97) sepia(.055)}
+.mail-delivery-log{display:grid;gap:6px;margin:14px 0 18px;padding:12px 14px;border:1px solid #b9cbc7;border-left:4px solid #497f76;background:#eef4f2;color:#435b56;font:12px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace}
+.mail-delivery-log b{color:#1a5e55;margin-bottom:2px}.mail-delivery-log span{display:block}
+.free-answer-grid input,.free-report input,.question-card input{width:100%;border:1px solid #aec5c0;border-radius:7px;padding:10px;background:#fff;color:#26312f;min-width:0}
+
+.plan-stage{overflow:hidden;isolation:isolate;touch-action:none}
+.plan-stage .plan-overlay{z-index:2;cursor:grab;user-select:none;-webkit-user-drag:none;will-change:transform;transition:opacity .2s,filter .2s,transform .08s}
+.plan-stage .plan-overlay.dragging{cursor:grabbing;transition:opacity .2s,filter .2s}
+.plan-stage.aligned .plan-overlay{opacity:.43;filter:saturate(.55) contrast(1.08)}
+.plan-reveal{position:absolute;z-index:3;left:48%;top:46%;width:20%;min-width:120px;aspect-ratio:1.8/1;border:3px solid rgba(151,30,44,.88);background:rgba(255,245,229,.82);color:#861e2c;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transform:scale(.88);transition:.35s;pointer-events:none;box-shadow:0 0 0 5px rgba(255,255,255,.54)}
+.plan-reveal b{font:900 clamp(18px,3vw,34px)/1 ui-monospace,Consolas,monospace;letter-spacing:.08em}.plan-reveal span{font-size:11px;margin-top:5px}
+.plan-stage.aligned .plan-reveal{opacity:1;transform:scale(1)}
+.plan-workbench{display:grid;gap:10px;margin:14px 0;padding:14px;border:1px solid #c5d7d3;background:#f7faf9;border-radius:9px}.plan-workbench p{margin:0;line-height:1.7;color:#526965}
+.plan-nudges{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.plan-nudges button{min-width:42px;min-height:38px;border:1px solid #9bbdb6;background:#fff;color:#225f57;border-radius:7px;font-weight:700}.plan-nudges button:hover{background:#e7f5f2;border-color:#4e9b90}.plan-status{padding:8px 11px;background:#e9f2f0;color:#486660;border-left:3px solid #789f98;font-weight:700}.plan-stage.aligned+.plan-workbench .plan-status{color:#0a6d62;border-left-color:#178b7d;background:#e2f4ef}
+
+.ending-dialog{max-height:92vh;overflow:auto}.ending-body{padding:26px;line-height:1.8}.ending-summary{font-size:17px;color:#294943;border-left:4px solid #198579;padding:10px 14px;background:#eef7f5}
+.ending-report-image{margin:20px 0;background:#e9efed;border:1px solid #c8d7d3}.ending-report-image img{width:100%;aspect-ratio:16/7;object-fit:cover;filter:saturate(.62) contrast(.98) sepia(.08)}.ending-report-image figcaption{padding:8px 12px;color:#697d78;font-size:11px}
+.ending-outcome-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.ending-outcome-grid article{border:1px solid #cedbd8;background:#f8fbfa;padding:16px}.ending-outcome-grid article>span{font:11px ui-monospace,Consolas,monospace;color:#66807a;letter-spacing:.08em}.ending-outcome-grid h2{font-size:17px;color:#175c54;margin:7px 0}.ending-outcome-grid p{margin:0;color:#3f5550;line-height:1.75}
+.ending-dossier{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0;padding:12px;background:#eaf3f1;border:1px solid #c5d7d3}.ending-dossier b{color:#155e55}.ending-dossier span{padding-left:8px;border-left:1px solid #a9bfba;color:#526a65}.ending-lastline{text-align:center;font-family:serif;font-size:19px;color:#315f57;letter-spacing:.08em}
+
+@media(max-width:700px){.plan-reveal{left:46%;top:45%;min-width:90px}.ending-outcome-grid{grid-template-columns:1fr}.ending-body{padding:18px}.ending-hero{min-height:200px}.ending-hero h1{font-size:30px}.ending-report-image img{aspect-ratio:16/9}.ending-dossier{display:grid}.ending-dossier span{border-left:0;padding-left:0}}

@@ -37,6 +37,12 @@ window.Paywall = {
     return true;
   },
 
+  showManual(config = {}) {
+    this.markAutoPrompted();
+    this.show(config);
+    return true;
+  },
+
   show(config = {}) {
     const existing = document.getElementById('paywall-overlay');
     if (existing) {

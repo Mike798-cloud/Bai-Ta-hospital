@@ -15,7 +15,7 @@
   };
 
   const fresh = () => ({
-    version: 7,
+    version: 8,
     started: false,
     current: 'mail',
     completed: {},
@@ -82,8 +82,8 @@
       guide: ['就医须知·旧楼', '事故当晚23:30后七楼进入封闭管理，普通家属加餐申请发生在次日，不应与当晚床位数量混为一谈。']
     },
     legacy: {
-      public: ['2013年事故通报版本', '公开版写“六名重症患者死亡、一名护士失踪”，但缓存源文件曾出现“七名护理对象”。04:11后才被改写。'],
-      departments: ['科研项目残留', '被删除的栏目指向“长夜唤醒计划”，内部项目编号 WT-0713；该编号随后出现在电子病历和影像系统。'],
+      public: ['2013年事故通报版本', '公开版写“六名重症患者死亡、一名护士失踪”。缓存差异只证明对象数量字段曾由7改为6；缓存中的修改人仅显示为匿名维护标识USR-04，无法据此确认对象身份或责任人。'],
+      departments: ['科研目录残留', '被删除栏目只留下项目代号 WT-0713 与“夜间刺激观察”目录名。对象类型、项目全称、负责人和伦理状态均已从公开缓存移除，必须到后续业务系统核对。'],
       map: ['消防备案索引', '9月12日备案提到七楼新增“设备夹层”，但新版平面图没有显示对应房间。']
     },
     staff: {
@@ -104,7 +104,7 @@
     emr: {
       medical: ['病历摘要', '患者0713：林祈，17岁，42kg，右膝旧伤。事故夜病历记录“醒宁2.04mL”。'],
       departments: ['药事培训公式', '醒宁剂量0.06mg/kg，药液浓度2mg/mL；体积 = 体重 × 0.06 ÷ 2。'],
-      public: ['护理与药房交叉记录', '责任护士杜蓉连续照护0713共37天，并三次申请终止夜间刺激，均被项目负责人赵秉文以“数据完整性”为由驳回。另有B6-04患者68kg、领用2.04mL的药房记录；若0713理论体积不同，说明病历字段可能被复制。']
+      public: ['护理与药房交叉记录', '责任护士杜蓉连续照护0713共37天，并三次申请终止夜间刺激，均被项目审批账号以“数据完整性”为由驳回。另有B6-04患者68kg、领用2.04mL的药房记录；若0713理论体积不同，说明病历字段可能被复制。审批账号的真实归属需到后续值班索引核对。']
     },
     pacs: {
       medical: ['PACS影像中心', 'PACS质控要求身份复核同时参考住院号、既往稳定骨性特征和设备原始信息，不能只依赖屏幕方向标记。'],
@@ -341,7 +341,7 @@
         ]
       },
       {
-        title:'住院服务与探视管理', date:'2013-09-16', department:'住院处', image:'assets/portal/photos/medical_2.webp', caption:'住院病区服务空间示意',
+        title:'住院服务与探视管理', date:'2013-09-16', department:'住院处', image:'assets/portal/scenes/ward.webp', caption:'2013年普通住院病房',
         body:[
           '住院患者办理入院后，由住院处完成身份核验并生成住院号和腕带信息，随后由病区护士站接收入科。特殊护理单元需再次核对患者姓名、住院号、腕带和床位，转床、转科或临时观察均须在交接记录中注明时间与责任人。',
           '普通病区探视时间原则上安排在白天和晚间固定时段。重症、隔离及设备密集区域可根据医疗安全需要临时限制探视，封闭管理期间家属物品由指定窗口登记后转交。夜间病区如需临时调整探视安排，应由病区负责人和值班保卫共同记录。',
@@ -375,7 +375,7 @@
     ],
     departments: [
       {
-        title:'内科系统', date:'2013-09-17', department:'医务处', image:'assets/portal/photos/departments_1.webp', caption:'内科诊疗区域示意',
+        title:'内科系统', date:'2013-09-17', department:'医务处', image:'assets/portal/scenes/laboratory.webp', caption:'内科相关检验工作区',
         body:[
           '白塔医院内科系统由呼吸、神经、心血管、肾脏等专业组成，承担门诊、住院和会诊工作。不同专业病区按护理级别配置床位和护士站，需进行跨科会诊时由主管医生发起申请并记录会诊时间。',
           '旧住院楼部分高依赖患者由内科医生与七楼护理单元共同管理。病情变化时，医生记录主要诊疗判断，护士站记录生命体征、氧疗和护理操作，两类记录的生成时间和维护系统并不完全相同。',
@@ -383,7 +383,7 @@
         ]
       },
       {
-        title:'急重症医学部', date:'2013-09-16', department:'急重症医学部', image:'assets/portal/photos/departments_2.webp', caption:'急重症监护区域示意',
+        title:'急重症医学部', date:'2013-09-16', department:'急重症医学部', image:'assets/portal/scenes/icu.webp', caption:'急重症监护区域',
         body:[
           '急重症医学部负责急诊抢救、重症监护及院内急危重症协作。旧住院楼七楼曾设置重症护理单元，与急诊、麻醉和设备科保持夜间联络，发生突发事件时可启动备用供氧和应急电源。',
           '重症区域采用更严格的人员和设备管理。除医生、护士外，进入封闭护理区的后勤和维修人员也需登记时间；患者转运时必须同步核对腕带、护理记录和必要设备，防止在紧急情况下发生身份混淆。',
@@ -399,7 +399,7 @@
         ]
       },
       {
-        title:'护理部', date:'2013-09-14', department:'护理部', image:'assets/normal_nurse_station.webp', caption:'护理工作站与夜班区域',
+        title:'护理部', date:'2013-09-14', department:'护理部', image:'assets/portal/scenes/training_room.webp', caption:'护理技能培训教室',
         body:[
           '护理部负责护士岗位管理、排班、业务培训、护理质量和技能考核。员工编号按工作单元、岗位类别和人员序号组合生成，内部人事系统同时保存制服尺码、培训记录和岗位变更历史。',
           '技能竞赛和培训成绩属于护理业务档案的一部分，获奖名单会在院内网站公布。人员调岗后，历史技能记录仍保留原姓名和当时编号，因此可与同期员工证、排班表和岗位登记互相对应。',
@@ -417,7 +417,7 @@
     ],
     guide: [
       {
-        title:'门诊就医流程及就诊须知', date:'2013-09-17', department:'门诊部', image:'assets/portal/photos/guide_1.webp', caption:'门诊就医流程示意',
+        title:'门诊就医流程及就诊须知', date:'2013-09-17', department:'门诊部', image:'assets/portal/scenes/registration.webp', caption:'门诊挂号与收费窗口',
         body:[
           '门诊患者可在服务台完成预约确认、取号和分诊。首次就诊需核对有效身份信息，复诊患者可使用原就诊号调阅历史记录。医生开具检查后，患者按申请单指引前往相应医技区域，结果返回后再由接诊医生综合判断。',
           '门诊大厅与住院区域使用不同的人员流线，普通门诊结束后部分通道会关闭。夜间需要急诊处理的患者应从急诊入口进入，不建议经住院楼内部通道往返，以免影响病区门禁管理。',
@@ -425,7 +425,7 @@
         ]
       },
       {
-        title:'急诊就医流程及就诊须知', date:'2013-09-16', department:'急诊部', image:'assets/portal/photos/guide_2.webp', caption:'急诊分诊与抢救流程示意',
+        title:'急诊就医流程及就诊须知', date:'2013-09-16', department:'急诊部', image:'assets/hospital_night_exterior.webp', caption:'夜间急诊入口',
         body:[
           '急诊实行24小时分诊制度。到院后先由分诊护士评估生命体征和紧急程度，危重患者直接进入抢救区，病情相对稳定者按分级顺序候诊。必要时可同时启动检验、影像和专科会诊。',
           '急诊转入住院病区时，须交接患者身份、诊疗经过、用药和随身物品。夜间转运通过指定电梯和通道进行，门禁系统记录刷卡时间，但该记录仅代表通道被使用，不单独代表具体人员身份。',
@@ -433,7 +433,7 @@
         ]
       },
       {
-        title:'住出院流程及住出院须知', date:'2013-09-15', department:'住院处', image:'assets/normal_nurse_station.webp', caption:'住院病区护理工作区',
+        title:'住出院流程及住出院须知', date:'2013-09-15', department:'住院处', image:'assets/portal/scenes/ward.webp', caption:'住院病区病房',
         body:[
           '患者办理住院时由住院处核对身份并分配住院号，进入病区后由护士再次核对腕带和床位。出院时需完成医嘱确认、费用结算、药物领取和腕带注销，特殊情况下的转院或临时离院须有单独记录。',
           '病区门禁刷卡用于控制通行，不等同于出院确认。工作人员、患者陪同人员和后勤人员均可能在不同时间使用指定通道，因此涉及离院身份时仍应结合腕带、服装、护理记录和大厅影像核实。',
@@ -441,7 +441,7 @@
         ]
       },
       {
-        title:'病历复印与影像资料申请', date:'2013-09-14', department:'病案室', image:'assets/archive_room.webp', caption:'医院病案档案室',
+        title:'病历复印与影像资料申请', date:'2013-09-14', department:'病案室', image:'assets/portal/scenes/records_service.webp', caption:'病案复印服务窗口',
         body:[
           '出院病历完成质控后由病案室统一归档。申请复印时需提供患者身份信息和住院号，复印范围按规定包含病案首页、医嘱、检查报告及相关护理记录。未完成归档的材料需由原科室补齐后方可正式出具。',
           '影像资料由PACS系统单独保存，病历复印件中的影像报告不等同于原始影像。申请历史影像时应同时核对检查号、设备信息和患者住院号，以防不同患者资料因编号录入错误被误关联。',
@@ -459,7 +459,7 @@
     ],
     public: [
       {
-        title:'院务公开与服务信息', date:'2013-09-17', department:'院办公室', image:'assets/hospital_day_exterior.webp', caption:'白塔医院院区外景',
+        title:'院务公开与服务信息', date:'2013-09-17', department:'院办公室', image:'assets/portal/scenes/meeting_room.webp', caption:'医院行政会议室',
         body:[
           '白塔医院通过网站和院内公告栏发布服务时间、收费说明、楼宇调整、制度更新及重要工作信息。正式公告由责任部门拟稿，院办公室审核后发布，并保留发布时间和经办账号。',
           '网站改版过程中，历史公告会迁入归档栏目。旧版网页、缓存文件和最终发布稿可能因格式调整存在差异，但涉及重大事件的修改应保留版本记录和修改时间。',
@@ -467,7 +467,7 @@
         ]
       },
       {
-        title:'护理质量与技能培训', date:'2013-09-16', department:'护理部', image:'assets/normal_nurse_station.webp', caption:'护理工作站实景',
+        title:'护理质量与技能培训', date:'2013-09-16', department:'护理部', image:'assets/portal/scenes/training_room.webp', caption:'护理技能培训教室',
         body:[
           '护理部每年组织岗位培训、理论考试和操作技能考核，并根据成绩进行表彰。技能赛报名资料包括姓名、工作单元、个人序号和竞赛编号，获奖名单会在院内网站公示。',
           '培训档案用于确认护士当时的岗位和业务资格。人员后续调岗或离职不会覆盖原始获奖信息，因此历史名单可与同期员工证和排班信息对应。',
@@ -483,7 +483,7 @@
         ]
       },
       {
-        title:'设备改造与消防备案', date:'2013-09-14', department:'后勤保障处', image:'assets/oxygen_valve_room.webp', caption:'医气设备改造现场',
+        title:'设备改造与消防备案', date:'2013-09-14', department:'后勤保障处', image:'assets/portal/scenes/fire_exit.webp', caption:'旧楼消防楼梯与疏散通道',
         body:[
           '医院楼宇改造涉及消防、供电、医用气体和疏散通道时，施工图、变更单和验收记录需分别归档。涉及住院区域的工程还需提前向临床科室说明施工范围和临时通行方案。',
           '旧住院楼在长期使用中曾多次调整设备间、储藏室和物流空间。消防备案通常以楼梯井、外墙和主要疏散通道作为固定参照，局部功能改变不会随意移动这些结构。',
@@ -491,7 +491,7 @@
         ]
       },
       {
-        title:'职工荣誉与岗位信息', date:'2013-09-13', department:'人事处', image:'assets/archive_room.webp', caption:'历史职工档案存放区',
+        title:'职工荣誉与岗位信息', date:'2013-09-13', department:'人事处', image:'assets/portal/scenes/records_service.webp', caption:'历史职工档案服务窗口',
         body:[
           '医院职工岗位信息由人事处统一维护，护理、医技和后勤人员的业务培训记录由对应部门补充。网站公开范围主要包括先进个人、技能竞赛、业务表彰和部分岗位招聘信息。',
           '历史员工编号由工作单元和人员序号组成，同一人员在岗位调整后可能出现新的部门标识，但原始档案不会删除。制服尺码、职业资格和培训记录属于内部人事信息，不在普通公开页面展示。',
@@ -518,7 +518,7 @@
         ]
       },
       {
-        title:'无障碍与消防通道', date:'2013-09-15', department:'保卫处 / 后勤保障处', image:'assets/hospital_night_exterior.webp', caption:'夜间楼宇疏散入口',
+        title:'无障碍与消防通道', date:'2013-09-15', department:'保卫处 / 后勤保障处', image:'assets/portal/scenes/fire_exit.webp', caption:'旧楼消防疏散楼梯',
         body:[
           '医院公共区域设置无障碍通道和消防疏散标识。住院楼疏散以楼梯井、防火分区和外部集合点为核心，任何内部装修不得占用消防通道或改变主要疏散口。',
           '消防图纸中的楼梯井、外墙和防火门位置属于重要固定信息。房间用途或隔墙调整时，新的平面图会重新标注功能名称，但固定结构通常保持不变。',
@@ -526,7 +526,7 @@
         ]
       },
       {
-        title:'院内交通与物流通道', date:'2013-09-14', department:'后勤保障处', image:'assets/laundry_lift.webp', caption:'旧楼物流电梯与布草通道',
+        title:'院内交通与物流通道', date:'2013-09-14', department:'后勤保障处', image:'assets/hospital_corridor.webp', caption:'旧楼内部物流通道',
         body:[
           '院内交通分为患者通行、医护转运和后勤物流三类。布草、餐食和医疗废物使用指定路线，避免与门诊患者流线长时间交叉。旧住院楼曾设置内部洗衣梯和污物通道。',
           '物流设施的控制器独立记录运行时间，设备时钟由后勤定期校准。控制器时间与监控服务器时间可能存在偏差，维修记录会注明校准量和处理日期。',
@@ -711,7 +711,7 @@
     clearTimeout(autoSupportTimer);
     autoSupportTimer = setTimeout(() => {
       if (!E.app.classList.contains('hidden')) window.Paywall.showOnce();
-    }, 20000);
+    }, 3000);
   }
 
   function shell(title, sub, body, mark = '白') {
@@ -741,7 +741,7 @@
   }
 
   function mail() {
-    status('收到一封发送时间为2013年的延时邮件');
+    status('旧邮件服务器恢复任务释放了一封滞留十三年的邮件');
     E.page.innerHTML = shell('白塔医院历史数据整理邮箱', '内部账号：songyan.contractor@baita.local', `
       <div class="section-heading"><div><span>01</span><h2>档案邮件中心</h2></div><p>历史邮件镜像 · 只读</p></div>
       <div class="email-list">
@@ -752,7 +752,8 @@
         </aside>
         <article class="email-content">
           <div id="mailMain">
-            <div class="mail-header"><h2>如果你还能看到这封信</h2><div class="muted">发件人：顾青禾　预设发送：2013-09-17 00:00</div></div>
+            <div class="mail-header"><h2>如果你还能看到这封信</h2><div class="muted">发件人：顾青禾　预设发送：2013-09-17 00:00　实际投递：2026-08-07 00:00</div></div>
+            <div class="mail-delivery-log" aria-label="邮件服务器投递日志"><b>投递链恢复记录</b><span>2013-09-17 00:00　目标地址不存在，进入冻结重试队列</span><span>2014-01-06 03:12　旧域停用，队列镜像封存</span><span>2026-08-06 23:59　旧楼服务器清点任务挂载历史镜像</span><span>2026-08-07 00:00　收件别名恢复，滞留邮件释放</span></div>
             <div class="paper"><p>宋言：</p>
               <p>如果你还能收到这封信，说明旧服务器至少还有一部分没有被清掉。</p>
               <p>我不知道后来那份名单被改成了什么样。那一夜留下的记录来自不同系统，也不是同一个人、在同一个时间改的。把它们放到一起之前，先确认每一条记录到底是谁写的、用的是哪一只钟。</p>
@@ -766,8 +767,8 @@
             </div>
           </div>
           <div id="mailTask" class="mail-extra mail-message" hidden>
-            <div class="mail-header"><h2>旧楼服务器清点任务</h2><div class="muted">发件人：信息科　发送时间：昨天 16:40</div></div>
-            <div class="mail-plain"><p>各位同事：</p><p>旧住院楼服务器计划于今晚完成例行清点。请按设备编号核对网页镜像、员工内网、护士站交班、电子病历、PACS、后勤维护和监控归档的存储状态。</p><p>部分老设备未接入统一校时服务，导出的时间戳可能与服务器时间存在偏差。涉及跨系统资料时，请保留原始设备时间和校时记录，不要直接覆盖。</p><p>本次仅做盘点和备份，不修改原始数据。</p><p style="text-align:right">信息科</p></div>
+            <div class="mail-header"><h2>旧楼服务器清点任务</h2><div class="muted">发件人：信息科　发送时间：2026-08-06 16:40</div></div>
+            <div class="mail-plain"><p>各位同事：</p><p>旧住院楼服务器计划于今晚完成例行清点。23:59将临时挂载2013年退役邮件域与历史队列镜像；若旧收件别名重新建立，处于冻结状态的滞留邮件可能被系统自动释放。</p><p>请按设备编号核对网页镜像、员工内网、护士站交班、电子病历、PACS、后勤维护和监控归档的存储状态。部分老设备未接入统一校时服务，导出的时间戳可能与服务器时间存在偏差。涉及跨系统资料时，请保留原始设备时间和校时记录，不要直接覆盖。</p><p>本次仅做盘点和备份，不修改原始数据。</p><p style="text-align:right">信息科</p></div>
           </div>
           <div id="mailFood" class="mail-extra mail-message" hidden>
             <div class="mail-header"><h2>周五食堂窗口临时调整</h2><div class="muted">发件人：后勤服务中心　发送时间：3天前 09:15</div></div>
@@ -832,8 +833,8 @@
       <div class="section-heading"><div><span>03</span><h2>历史网页快照</h2></div><p>2013-09-19 只读缓存</p></div>
       <div class="archive-banner"><img src="assets/archive_room.webp" alt="白塔医院旧档案室"><div><b>2013年9月17日 · 旧住院楼停电事故</b><p>以下页面来自只读缓存，部分栏目已从现行官网删除。</p></div></div>
       <div class="grid-2">
-        <article class="card"><h2>旧楼停电事故情况通报</h2><p>公开版：六名登记患者在旧楼停电中死亡；护士顾青禾被记为擅离岗位后失踪。</p><div class="clue warning"><b>缓存差异：</b>原始标题下方曾写“七名护理对象”，04:11被管理员账号改为“六名患者”。顾青禾未被列入患者死亡口径。</div><p class="small muted">编辑账号：zhaobw_admin　最后修改：2013-09-17 04:11</p><button class="mini-btn" data-portal="public">查看版本说明</button></article>
-        <article class="card"><h2>被删除的科研栏目</h2><p>“长夜唤醒计划”（WT-0713）以睡眠剥夺后的意识唤醒为名，将一名未进入正式床位表的未成年人作为第七名护理对象。项目负责人需对不良事件承担停项与行政责任。</p><p class="small muted">伦理复核状态：暂停；项目负责人：赵秉文</p><button class="mini-btn" data-portal="departments">科研项目归档</button></article>
+        <article class="card"><h2>旧楼停电事故情况通报</h2><p>公开版：六名登记患者在旧楼停电中死亡；护士顾青禾被记为擅离岗位后失踪。</p><div class="clue warning"><b>缓存差异：</b>源文件曾出现 <code>subject_count=7</code>，04:11变为 <code>subject_count=6</code>。缓存没有保留七个对象的姓名，也不能证明多出的对象属于患者还是职工。</div><p class="small muted">维护标识：USR-04　最后修改：2013-09-17 04:11</p><button class="mini-btn" data-portal="public">查看版本说明</button></article>
+        <article class="card"><h2>被删除的科研目录</h2><p>归档树仅残留目录 <code>/research/WT-0713</code>，页面标题字段被清空，摘要只剩“夜间刺激观察”。对象类型、项目全称、负责人和伦理结论都不在公开镜像中。</p><p class="small muted">最后状态：已删除　关联业务系统：未知</p><button class="mini-btn" data-portal="departments">查看目录残留</button></article>
       </div>
       <div class="card"><h3>同期公告</h3><div class="doc-row"><span>09/12</span><span>七楼新增“设备夹层”消防备案</span><span>${collect('c3','13')}</span></div><button class="mini-btn" data-portal="map">查看旧楼导航索引</button></div>`,'旧');
   }
@@ -994,14 +995,17 @@
     E.page.innerHTML = shell('监控档案', '2013-09-17 00:27 · 大厅出口', `
       <div class="section-heading"><div><span>10</span><h2>安防监控回放</h2></div><p>2013-09-17 归档视频</p></div>
       <div class="cctv-player card"><div class="media-frame cctv-media"><img class="cctv-sequence" src="assets/cctv_exit_sequence.webp" alt="大厅出口四帧连续监控画面"></div><div class="cctv-meta"><span>CAM-LOBBY-02</span><span>00:27:10—00:27:16</span><span>四帧连续画面</span></div><p class="small muted">系统未生成人物描述。请把连续步态、衣物轮廓和袖口局部与其他系统记录交叉核对。</p><div class="action-row"><button type="button" class="mini-btn" data-portal="medical">病历稳定特征</button><button type="button" class="mini-btn" data-portal="departments">制服登记</button><button type="button" class="mini-btn" data-portal="public">腕带材质说明</button></div></div>
-      <div class="puzzle-box"><h2>识别离院者</h2><div class="choice-list" id="cctvChecks"><label><input type="checkbox" value="knee">连续帧显示右膝伸展受限</label><label><input type="checkbox" value="uniform">制服肩线与袖长明显偏大</label><label><input type="checkbox" value="band">袖口下有窄幅反光环</label><label><input type="checkbox" value="hair">发型与顾青禾旧照相似</label><label><input type="checkbox" value="height">画面估算身高接近</label></div><label>离院者<select id="leaver"><option></option><option>林祈</option><option>顾青禾</option><option>杜蓉</option></select></label><button id="cctvSubmit" class="btn btn-primary">提交</button><div id="cctvResult"></div></div>`,'监');
+      <div class="puzzle-box"><h2>建立离院者身份链</h2><p class="muted">系统不提供观察标签。请根据四帧画面自行描述，并与病历、制服登记和腕带资料逐项对应。</p><div class="answer-grid free-answer-grid"><label>步态异常部位<input id="cctvKnee" autocomplete="off" placeholder="身体部位"></label><label>画面中制服的登记尺码<input id="cctvUniform" autocomplete="off" placeholder="如：S码"></label><label>袖口反光物<input id="cctvBand" autocomplete="off" placeholder="物品名称"></label><label>离院者<input id="leaver" autocomplete="off" placeholder="输入姓名"></label></div><button id="cctvSubmit" class="btn btn-primary" style="margin-top:12px">提交身份链</button><div id="cctvResult"></div></div>`,'监');
     if (state.completed.p7) result('cctvResult', true, '已确认离院者是林祈。');
     $('#cctvSubmit', E.page).onclick = () => {
-      const v = $$('#cctvChecks input:checked', E.page).map(x => x.value).sort().join(',');
-      if (v === 'band,knee,uniform' && $('#leaver', E.page).value === '林祈') {
+      const knee = normalizeAnswer($('#cctvKnee', E.page).value);
+      const uniform = normalizeAnswer($('#cctvUniform', E.page).value).toUpperCase();
+      const band = normalizeAnswer($('#cctvBand', E.page).value);
+      const leaver = normalizeAnswer($('#leaver', E.page).value);
+      if (/右膝/.test(knee) && /^M码?$/.test(uniform) && /(患者)?腕带/.test(band) && leaver === '林祈') {
         complete('p7', ['e13','e14','e15'], '确认身份交换');
         result('cctvResult', true, '护士服中的离院者是患者林祈。');
-      } else result('cctvResult', false, '当前身份链仍不闭合。请确认三项特征是否分别能在独立记录中得到支持。');
+      } else result('cctvResult', false, '当前身份链仍不闭合。请分别写出异常部位、制服实际尺码、反光物和姓名。');
     };
   }
 
@@ -1019,23 +1023,74 @@
     E.page.innerHTML = shell('旧楼平面图叠合工具', '固定楼梯井与外墙后对齐', `
       <div class="section-heading"><div><span>12</span><h2>院内导航 · 历史图纸</h2></div><p>旧住院楼七层 · 2010/2013版本</p></div>
       <div class="action-row"><button type="button" class="mini-btn" data-portal="map">查看叠图原则</button><button type="button" class="mini-btn" data-portal="departments">查看氧气管线</button><button type="button" class="mini-btn" data-portal="public">查看消防备案</button></div>
-      <div class="plan-stage media-frame"><img src="assets/floor_old.webp" alt="旧版七楼平面图"><img id="planNew" class="plan-overlay" src="assets/floor_new.webp" alt="新版七楼平面图叠层"></div>
-      <div class="plan-controls"><label>X偏移<input id="planX" type="range" min="-30" max="30" value="0"><output id="planXo">0</output></label><label>Y偏移<input id="planY" type="range" min="-30" max="30" value="0"><output id="planYo">0</output></label><label>缩放<input id="planS" type="range" min="90" max="110" value="100"><output id="planSo">100%</output></label></div>
-      <div class="puzzle-box"><label>隐藏入口<input id="planEntrance" placeholder="房间名称"></label><button id="planSubmit" class="btn btn-primary">确认叠图</button><div id="planResult"></div></div>`,'图');
-    const n = $('#planNew', E.page);
-    const upd = () => {
-      const x = +$('#planX', E.page).value, y = +$('#planY', E.page).value, s = +$('#planS', E.page).value;
-      n.style.setProperty('--ox', x + 'px'); n.style.setProperty('--oy', y + 'px'); n.style.setProperty('--os', s / 100);
-      $('#planXo', E.page).textContent = x; $('#planYo', E.page).textContent = y; $('#planSo', E.page).textContent = s + '%';
+      <div id="planStage" class="plan-stage media-frame"><img src="assets/floor_old.webp" alt="旧版七楼平面图"><img id="planNew" class="plan-overlay" src="assets/floor_new.webp" alt="可拖动的新版七楼平面图叠层" draggable="false"><div class="plan-reveal" aria-hidden="true"><b>B7-0</b><span>隐藏边界</span></div></div>
+      <div class="plan-workbench"><p>直接拖动上层图纸，使楼梯井、外墙转角和主氧管同时重合。结构接近时系统会自动吸附；下方按钮用于精细调整，不显示坐标或密码数值。</p><div class="plan-nudges" role="group" aria-label="图纸精细调整"><button type="button" data-plan-move="0,-5" aria-label="向上微调">↑</button><button type="button" data-plan-move="-5,0" aria-label="向左微调">←</button><button type="button" data-plan-reset>重置</button><button type="button" data-plan-move="5,0" aria-label="向右微调">→</button><button type="button" data-plan-move="0,5" aria-label="向下微调">↓</button><button type="button" data-plan-zoom="-0.01">缩小</button><button type="button" data-plan-zoom="0.01">放大</button></div><output id="planStatus" class="plan-status">固定结构尚未重合</output></div>
+      <div class="puzzle-box"><label>显现边界的维护入口<input id="planEntrance" placeholder="房间名称"></label><button id="planSubmit" class="btn btn-primary">记录隐藏房间</button><div id="planResult"></div></div>`,'图');
+    const stage = $('#planStage', E.page), n = $('#planNew', E.page), statusNode = $('#planStatus', E.page);
+    const target = { x: 15, y: -10, s: .98 };
+    const plan = { x: 0, y: 0, s: 1, snapped: false };
+    let drag = null;
+    const drawPlan = () => {
+      n.style.setProperty('--ox', plan.x + 'px');
+      n.style.setProperty('--oy', plan.y + 'px');
+      n.style.setProperty('--os', plan.s);
+      stage.classList.toggle('aligned', plan.snapped);
+      if (plan.snapped) statusNode.textContent = '固定结构吻合：隐藏边界已显现';
+      else {
+        const distance = Math.abs(plan.x - target.x) + Math.abs(plan.y - target.y) + Math.abs(plan.s - target.s) * 180;
+        statusNode.textContent = distance < 16 ? '三处基准已接近，继续微调' : '固定结构尚未重合';
+      }
     };
-    ['planX','planY','planS'].forEach(id => $('#'+id, E.page).oninput = upd);
+    const snapIfClose = () => {
+      if (Math.abs(plan.x - target.x) <= 4 && Math.abs(plan.y - target.y) <= 4 && Math.abs(plan.s - target.s) <= .006) {
+        Object.assign(plan, target, { snapped: true });
+        drawPlan();
+        return true;
+      }
+      plan.snapped = false;
+      drawPlan();
+      return false;
+    };
+    n.onpointerdown = e => {
+      drag = { id: e.pointerId, x: e.clientX, y: e.clientY, ox: plan.x, oy: plan.y };
+      n.setPointerCapture?.(e.pointerId);
+      n.classList.add('dragging');
+    };
+    n.onpointermove = e => {
+      if (!drag || drag.id !== e.pointerId || plan.snapped) return;
+      plan.x = Math.max(-40, Math.min(40, drag.ox + e.clientX - drag.x));
+      plan.y = Math.max(-40, Math.min(40, drag.oy + e.clientY - drag.y));
+      drawPlan();
+    };
+    const endDrag = e => {
+      if (!drag || drag.id !== e.pointerId) return;
+      drag = null;
+      n.classList.remove('dragging');
+      snapIfClose();
+    };
+    n.onpointerup = endDrag;
+    n.onpointercancel = endDrag;
+    $$('[data-plan-move]', E.page).forEach(b => b.onclick = () => {
+      const [dx,dy] = b.dataset.planMove.split(',').map(Number);
+      plan.x = Math.max(-40, Math.min(40, plan.x + dx));
+      plan.y = Math.max(-40, Math.min(40, plan.y + dy));
+      plan.snapped = false;
+      snapIfClose();
+    });
+    $$('[data-plan-zoom]', E.page).forEach(b => b.onclick = () => {
+      plan.s = Math.max(.92, Math.min(1.08, +(plan.s + Number(b.dataset.planZoom)).toFixed(2)));
+      plan.snapped = false;
+      snapIfClose();
+    });
+    $('[data-plan-reset]', E.page).onclick = () => { Object.assign(plan, { x:0, y:0, s:1, snapped:false }); drawPlan(); };
+    drawPlan();
     if (state.completed.p8) result('planResult', true, '已发现B7-0与氧气支管。');
     $('#planSubmit', E.page).onclick = () => {
-      const x = +$('#planX', E.page).value, y = +$('#planY', E.page).value, s = +$('#planS', E.page).value, e = $('#planEntrance', E.page).value.trim();
-      if (x >= 12 && x <= 18 && y >= -13 && y <= -7 && s >= 96 && s <= 100 && /器械储藏室/.test(e)) {
+      const e = $('#planEntrance', E.page).value.trim();
+      if (plan.snapped && /器械储藏室/.test(e)) {
         complete('p8', ['e16','e17'], '定位隐藏房间B7-0');
         result('planResult', true, '入口在器械储藏室，旧氧气支管通向B7-0。');
-      } else result('planResult', false, '叠合参数或入口名称与图纸记录不一致。');
+      } else result('planResult', false, plan.snapped ? '入口名称与显现后的维护标记不一致。' : '三处固定结构尚未同时重合。');
     };
   }
 
@@ -1045,13 +1100,15 @@
       <div class="section-heading"><div><span>13</span><h2>病历与交班审计</h2></div><p>版本差异审计 · 2013-09-17</p></div>
       <div class="audit-summary"><button type="button" data-portal="departments"><b>账号表</b><span>核对值班账号归属</span></button><button type="button" data-portal="public"><b>跨日</b><span>注意日期边界</span></button><button type="button" data-portal="medical"><b>字段组</b><span>比较修改范围</span></button></div>
       <div class="log-compare card"><table><tr><th>标准时间</th><th>账号</th><th>字段</th><th>旧值 → 新值</th></tr><tr><td>09-16 23:48</td><td>durong_n</td><td>person.display_name<br>transfer.ready</td><td>林祈 → 顾青禾<br>false → true</td></tr><tr><td>09-17 00:23</td><td>zhaobw_admin</td><td>death.time<br>room.id<br>dose.volume<br>access.owner</td><td>空 → 00:17<br>B7-0 → B7-02<br>1.26 → 2.04<br>0713 → 顾青禾</td></tr><tr><td>09-17 04:11</td><td>zhaobw_admin</td><td>notice.subject_count</td><td>七名护理对象 → 六名患者</td></tr></table></div>
-      <div class="puzzle-box"><div class="answer-grid"><label>durong_n归属<select id="logA"><option></option><option>杜蓉</option><option>赵秉文</option></select></label><label>zhaobw_admin归属<select id="logB"><option></option><option>杜蓉</option><option>赵秉文</option></select></label><label>救援性字段组<select id="logC"><option></option><option value="identity">身份+离院准备</option><option value="death">死亡+门禁+通报</option></select></label><label>掩盖性字段组<select id="logD"><option></option><option value="identity">身份+离院准备</option><option value="death">死亡+门禁+通报</option></select></label></div><button id="logSubmit" class="btn btn-primary" style="margin-top:12px">提交责任链</button><div id="logResult"></div></div>`,'审');
+      <div class="puzzle-box"><h2>自行归纳责任链</h2><p class="muted">不要选择预设结论。先从值班账号索引确定人物，再用字段范围概括两类修改的目的。</p><div class="answer-grid free-answer-grid"><label>durong_n归属<input id="logA" autocomplete="off" placeholder="姓名"></label><label>zhaobw_admin归属<input id="logB" autocomplete="off" placeholder="姓名"></label><label>救援性修改涉及什么<input id="logC" autocomplete="off" placeholder="概括至少两个字段目的"></label><label>掩盖性修改涉及什么<input id="logD" autocomplete="off" placeholder="概括至少三个字段目的"></label></div><button id="logSubmit" class="btn btn-primary" style="margin-top:12px">提交责任链</button><div id="logResult"></div></div>`,'审');
     if (state.completed.p9) result('logResult', true, '已区分救援改写与掩盖改写。');
     $('#logSubmit', E.page).onclick = () => {
-      if ($('#logA', E.page).value === '杜蓉' && $('#logB', E.page).value === '赵秉文' && $('#logC', E.page).value === 'identity' && $('#logD', E.page).value === 'death') {
+      const a = normalizeAnswer($('#logA', E.page).value), b = normalizeAnswer($('#logB', E.page).value);
+      const rescue = normalizeAnswer($('#logC', E.page).value), cover = normalizeAnswer($('#logD', E.page).value);
+      if (a === '杜蓉' && b === '赵秉文' && /身份/.test(rescue) && /(离院|转运|救援)/.test(rescue) && /死亡/.test(cover) && /门禁/.test(cover) && /(通报|人数|官网)/.test(cover)) {
         complete('p9', ['e18','e19'], '还原三版交班记录');
         result('logResult', true, '杜蓉先交换身份救人；赵秉文随后篡改死亡与门禁记录。');
-      } else result('logResult', false, '提交内容与版本记录不一致。');
+      } else result('logResult', false, '责任链仍有缺口：请核对两个账号，并分别概括身份/离院与死亡/门禁/通报字段。');
     };
   }
 
@@ -1096,12 +1153,13 @@
     E.page.innerHTML = shell('证据推演台', '终章：区分救援者、篡改者与受害者', `
       <div class="section-heading"><div><span>15</span><h2>历史事件复盘</h2></div><p>病案质量与系统审计联合复核</p></div>
       <div class="final-brief"><div><b>已取得证据</b><strong>${state.evidence.filter(id=>id!=='e22').length} / 21</strong></div><div><b>隐藏碎片</b><strong>${state.easter.length} / 6</strong></div><div class="muted">结局会综合证据完整度、危险操作、隐藏链与公开方式。</div></div>
-      <div class="card"><h3>统一后的跨日时间线</h3><table class="timeline-table"><tr><th>标准时间</th><th>原始事件</th></tr><tr><td>09-16 23:48</td><td>护理账号变更0713显示身份与离院准备</td></tr><tr><td>09-17 00:00</td><td>顾青禾预设邮件进入发送队列</td></tr><tr><td>09-17 00:17</td><td>B7-0呼叫缓存发出含O₂的脉冲</td></tr><tr><td>09-17 00:21</td><td>0713腕带进入洗衣梯</td></tr><tr><td>09-17 00:23</td><td>管理员账号进入控制室并开始批量改写</td></tr><tr><td>09-17 00:25</td><td>B7-0备用氧气支路被关闭</td></tr><tr><td>09-17 00:27</td><td>穿护士服者从大厅离院</td></tr><tr><td>09-17 04:11</td><td>官网口径由七名护理对象改为六名患者</td></tr></table></div>
-      <div class="evidence-board"><div class="question-card"><label>B7-0患者<select id="q1"><option></option><option>林祈</option><option>顾青禾</option></select></label></div><div class="question-card"><label>00:27离院者<select id="q2"><option></option><option>林祈</option><option>顾青禾</option></select></label></div><div class="question-card"><label>死在B7-0的人<select id="q3"><option></option><option>林祈</option><option>顾青禾</option></select></label></div><div class="question-card"><label>身份交换者<select id="q4"><option></option><option>杜蓉</option><option>赵秉文</option></select></label></div><div class="question-card"><label>最终篡改者<select id="q5"><option></option><option>杜蓉</option><option>赵秉文</option></select></label></div><div class="question-card"><label>下令切氧者<select id="q6"><option></option><option>杜蓉</option><option>赵秉文</option></select></label></div></div>
-      <div class="puzzle-box"><label>杜蓉的目的<select id="q7"><option></option><option value="save">救出林祈</option><option value="cover">掩盖实验</option></select></label><label>公开方式<select id="disclose"><option value="protect">公开真相，但保护林祈现身份</option><option value="full">公开全部实名资料</option><option value="archive">只提交内部档案</option></select></label><button id="finalSubmit" class="btn btn-primary">提交调查报告</button><div id="finalResult"></div></div>`,'案');
+      <div class="card"><h3>统一后的跨日时间线</h3><table class="timeline-table"><tr><th>标准时间</th><th>原始事件</th></tr><tr><td>09-16 23:48</td><td>护理账号变更0713显示身份与离院准备</td></tr><tr><td>09-17 00:00</td><td>顾青禾预设邮件进入队列；因目标别名不存在而冻结</td></tr><tr><td>09-17 00:17</td><td>B7-0呼叫缓存发出含O₂的脉冲</td></tr><tr><td>09-17 00:21</td><td>0713腕带进入洗衣梯</td></tr><tr><td>09-17 00:23</td><td>管理员账号进入控制室并开始批量改写</td></tr><tr><td>09-17 00:25</td><td>B7-0备用氧气支路被关闭</td></tr><tr><td>09-17 00:27</td><td>穿护士服者从大厅离院</td></tr><tr><td>09-17 04:11</td><td>官网口径由七名护理对象改为六名患者</td></tr><tr><td>2026-08-07 00:00</td><td>旧邮件域恢复，冻结队列把邮件投递给当前清点账号</td></tr></table></div>
+      <div class="evidence-board free-report"><div class="question-card"><label>B7-0患者<input id="q1" autocomplete="off" placeholder="姓名"></label></div><div class="question-card"><label>00:27离院者<input id="q2" autocomplete="off" placeholder="姓名"></label></div><div class="question-card"><label>死在B7-0的人<input id="q3" autocomplete="off" placeholder="姓名"></label></div><div class="question-card"><label>身份交换者<input id="q4" autocomplete="off" placeholder="姓名"></label></div><div class="question-card"><label>最终篡改者<input id="q5" autocomplete="off" placeholder="姓名"></label></div><div class="question-card"><label>下令切氧者<input id="q6" autocomplete="off" placeholder="姓名"></label></div></div>
+      <div class="puzzle-box"><label>用一句话写出杜蓉的目的<input id="q7" autocomplete="off" placeholder="她为什么修改身份与离院准备字段？"></label><label>公开方式<select id="disclose"><option value="protect">公开真相，但保护林祈现身份</option><option value="full">公开全部实名资料</option><option value="archive">只提交内部档案</option></select></label><button id="finalSubmit" class="btn btn-primary">提交调查报告</button><div id="finalResult"></div></div>`,'案');
     $('#finalSubmit', E.page).onclick = () => {
-      const a = [$('#q1',E.page).value,$('#q2',E.page).value,$('#q3',E.page).value,$('#q4',E.page).value,$('#q5',E.page).value,$('#q6',E.page).value,$('#q7',E.page).value];
-      if (JSON.stringify(a) === JSON.stringify(['林祈','林祈','顾青禾','杜蓉','赵秉文','赵秉文','save'])) {
+      const a = ['q1','q2','q3','q4','q5','q6'].map(id => normalizeAnswer($('#' + id, E.page).value));
+      const purpose = normalizeAnswer($('#q7', E.page).value);
+      if (JSON.stringify(a) === JSON.stringify(['林祈','林祈','顾青禾','杜蓉','赵秉文','赵秉文']) && /(救出|救走|帮助|保护).*林祈/.test(purpose)) {
         const mode = $('#disclose', E.page).value;
         state.privacyProtected = mode === 'protect';
         state.finalEvidenceComplete = Array.from({length:21},(_,i)=>`e${String(i+1).padStart(2,'0')}`).every(id=>state.evidence.includes(id));
@@ -1111,16 +1169,44 @@
   }
 
   function showEnding(mode) {
-    const map = {
-      protect: ['A：被保护的真相','调查报告公开赵秉文的篡改、切氧责任与长夜唤醒计划的违规链，同时隐去林祈当前身份。六名登记患者、隐藏患者林祈与死在夹层中的顾青禾被分别写回记录，人数口径不再混用。'],
-      full: ['B：所有名字','你公开了全部原始档案。真相被迅速传播，但林祈也被重新拖回十三年前。'],
-      archive: ['C：封存副本','报告进入内部审计，官方叙事开始松动，却仍没有公开更正。']
+    const variants = {
+      protect: {
+        title:'A：被保护的真相', art:'assets/local_newspaper.webp',
+        summary:'调查报告公开赵秉文的篡改、切氧责任与违规试验链，同时隐去林祈当前身份。六名登记患者、隐藏患者林祈与死在夹层中的顾青禾被分别写回记录，人数口径不再混用。',
+        news:'《白城晚讯》发布更正：大厅画面中的离院者不是失踪护士。报道只使用“幸存患者L”代称，焦点转向医院如何长期维持错误通报。',
+        hospital:'医院撤下2013年旧通报，公开承认存在第七名护理对象和未备案设备夹层；赵秉文相关材料转交独立调查，顾青禾恢复在岗履职与事故受害者身份。',
+        survivor:'三天后，清点邮箱收到一封无署名短笺：“名字没有再被写出来。谢谢你把她留下的那一夜还给她。”',
+        caseState:'证据副本进入公开复核，幸存者现身份受到保护。'
+      },
+      full: {
+        title:'B：所有名字', art:'assets/cctv_exit_sequence.webp',
+        summary:'你公开了全部原始档案，包括林祈的现姓名、病历和离院路径。真相迅速传播，但幸存者也被重新拖回十三年前。',
+        news:'多个账号转载监控帧和病历截图，“失踪护士反转”成为热点。赵秉文受到调查，林祈的住址、工作信息也随之被人肉扩散。',
+        hospital:'医院被迫承认人数口径与违规项目，但声明将“患者隐私外泄”归因于材料提交者，试图把责任争议转向公开方式。',
+        survivor:'清点邮箱只收到系统退信。此前用于联系的别名在报道发布两小时后永久注销。',
+        caseState:'事实获得公开确认，但隐私伤害不可撤回。'
+      },
+      archive: {
+        title:'C：封存副本', art:'assets/archive_room.webp',
+        summary:'报告进入内部审计，原始记录得以保全，却没有形成公开更正。十三年前的叙事开始松动，但公众仍只看得到“六名患者、一名护士失踪”。',
+        news:'地方新闻库没有新增报道。2013年的错误文章仍排在检索结果首位，未刊更正来函继续显示“内部资料”。',
+        hospital:'院内审计把案件标记为“需进一步核实”，赵秉文账号权限被冻结；对外页面只增加一句“历史内容正在复核”。',
+        survivor:'没有新邮件到达。匿名别名最后一次登录停在报告提交当晚。',
+        caseState:'证据被保存但真相未公开，后续取决于内部程序。'
+      }
     };
-    let [t,p] = map[mode] || map.protect;
-    if (mode === 'protect' && state.finalEvidenceComplete && state.easter.length === 6) { t = 'S：第八张床'; p += ' 六枚残留编号拼出B8-11：这并不是唯一一场被隐藏的试验。完整证据副本被送往独立调查。'; }
-    else if (mode === 'protect' && state.wrongActions > 0) { t = 'A-：迟来的交班'; p += ` 你在B7-0触发过${state.wrongActions}次保护复位，所幸历史维护模式没有再次伤害任何人。`; }
+    const v = Object.assign({}, variants[mode] || variants.protect);
+    let t = v.title;
+    if (mode === 'protect' && state.finalEvidenceComplete && state.easter.length === 6) {
+      t = 'S：第八张床';
+      v.summary += ' 六枚残留编号拼出B8-11，证明这不是唯一一场被隐藏的试验。';
+      v.caseState = 'B7-0案完整公开后，独立调查依据B8-11编号启动第二条证据保全链。';
+    } else if (mode === 'protect' && state.wrongActions > 0) {
+      t = 'A-：迟来的交班';
+      v.hospital += ` 现场恢复记录同时注明你触发过${state.wrongActions}次保护复位，设备缓存有少量损耗，但关键证词仍可验证。`;
+    }
     state.ending = t; save();
-    E.endingDialog.querySelector('#endingContent').innerHTML = `<div class="ending-hero"><h1>${t}</h1></div><div class="ending-body"><p>${p}</p><p><b>调查记录：</b>关键证据 ${state.evidence.filter(id=>id!=='e22').length}/21；隐藏碎片 ${state.easter.length}/6；危险操作 ${state.wrongActions} 次；幸存者隐私${state.privacyProtected?'已保护':'未保护'}。</p><p>十三年后，零点交班终于完成。</p><div class="ending-actions"><button id="endingClose" class="btn btn-primary">回到证据板</button><button id="endingRestart" class="btn">重新调查</button></div></div>`;
+    E.endingDialog.querySelector('#endingContent').innerHTML = `<div class="ending-hero ending-${mode}"><h1>${t}</h1></div><div class="ending-body"><p class="ending-summary">${v.summary}</p><figure class="ending-report-image"><img src="${v.art}" alt="结局调查材料"><figcaption>报告提交后七日内形成的公开与归档记录</figcaption></figure><div class="ending-outcome-grid"><article><span>01 / 新闻后续</span><h2>公开叙事</h2><p>${v.news}</p></article><article><span>02 / 院方处置</span><h2>责任追查</h2><p>${v.hospital}</p></article><article><span>03 / 幸存者</span><h2>回信状态</h2><p>${v.survivor}</p></article><article><span>04 / 调查状态</span><h2>证据去向</h2><p>${v.caseState}</p></article></div><div class="ending-dossier"><b>调查记录</b><span>关键证据 ${state.evidence.filter(id=>id!=='e22').length}/21</span><span>隐藏碎片 ${state.easter.length}/6</span><span>危险操作 ${state.wrongActions}次</span><span>隐私${state.privacyProtected?'已保护':'未保护'}</span></div><p class="ending-lastline">十三年后，零点交班终于完成。</p><div class="ending-actions"><button id="endingClose" class="btn btn-primary">回到证据板</button><button id="endingRestart" class="btn">重新调查</button></div></div>`;
     E.endingDialog.showModal();
     $('#endingClose').onclick = () => E.endingDialog.close();
     $('#endingRestart').onclick = () => { E.endingDialog.close(); if (confirm('确定清除当前进度并重新开始吗？')) { localStorage.removeItem(D.saveKey); location.reload(); } };
@@ -1135,6 +1221,7 @@
     $('#saveNotes')?.addEventListener('click', () => { state.notes = $('#notesArea').value; save(false); });
   }
 
+  function normalizeAnswer(s) { return String(s || '').trim().replace(/[\s，,、；;：:。.!！?？]/g, ''); }
   function escapeHtml(s) { return String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
   function openSide(tab = 'evidence') { sideTab = tab; E.layout.classList.add('side-open'); renderSide(); }
 
@@ -1227,7 +1314,7 @@
   $('#noteBtn').onclick = () => openSide('notes');
   $('#evidenceBtn').onclick = () => openSide('evidence');
   $('#hintBtn').onclick = openHint;
-  $('#supportBtn').onclick = () => { closeMoreMenu(); window.Paywall?.show(); };
+  $('#supportBtn').onclick = () => { closeMoreMenu(); window.Paywall?.showManual(); };
   $('#moreBtn').onclick = e => {
     e.stopPropagation();
     const menu = $('#moreMenu');
